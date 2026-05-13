@@ -27,6 +27,7 @@ Sentiment Analysis is a **Text Classification** task where the model reads a sen
 sentiment-analysis/
 │
 ├── sentiment_analysis_classification.py   # Main Python script
+├── sentiment_analysis.ipynb               # Google Colab notebook
 ├── positive.txt                           # 200 positive sentences
 ├── neutral.txt                            # 100 neutral sentences
 ├── negative.txt                           # 200 negative sentences
@@ -63,13 +64,43 @@ Output: Label + Accuracy
 
 ---
 
-## 🚀 Installation & Running
+## 🚀 Option 1: Running on Google Colab (Recommended)
+
+1. Open the `sentiment_analysis.ipynb` file in **[Google Colab](https://colab.research.google.com/)**
+   - Go to **File → Upload notebook**
+   - Upload `sentiment_analysis.ipynb`
+
+2. Run **Cell 1** to install dependencies:
+   ```
+   !pip install textblob
+   !python -m textblob.download_corpora
+   ```
+
+3. Run **Cell 2** — it will prompt you to upload the dataset files.
+   - Upload `positive.txt`, `negative.txt`, and `neutral.txt`
+
+4. Run **Cell 3** to save the uploaded files.
+
+5. Run **Cell 4** to load the classifier function.
+
+6. Run **Cell 5** to analyze the dataset.
+
+7. Run **Cell 6** to display the results.
+
+8. Run **Cell 7** to see the accuracy summary.
+
+9. Run **Cell 8** to try your own sentence — just change the text and run!
+
+> 💡 You can run all cells at once using **Runtime → Run all**
+
+---
+
+## 💻 Option 2: Running Locally with VS Code
 
 ### Step 1 — Make sure Python is installed
 ```bash
 python --version
 ```
-> Should show Python 3.8 or higher
 
 ### Step 2 — Install required library
 ```bash
@@ -95,7 +126,7 @@ python sentiment_analysis_classification.py
 
 ## 💬 Try It Yourself
 
-After the script finishes analyzing the dataset, it will prompt you to enter your own sentence:
+After running the analysis, you can test any sentence:
 
 ```
 Enter your sentence (or type 'exit' to quit): I really enjoyed this lecture!
@@ -103,33 +134,6 @@ Enter your sentence (or type 'exit' to quit): I really enjoyed this lecture!
   Label       : Positive
   Polarity    : 0.4583
   Subjectivity: 0.625
-```
-
-Type `exit` to quit.
-
----
-
-## 🧪 Example Output
-
-```
-=================================================================
-  Sentiment Classification - Sentence by Sentence
-=================================================================
-Text                                       Label        Polarity
------------------------------------------------------------------
-I absolutely love this product!...        Positive       0.7417
-This is the worst experience ever...      Negative      -0.8750
-The package arrived on Tuesday.           Neutral        0.0000
-
-=================================================================
-  Classification Summary
-=================================================================
-  Positive    :  200 sentences  ( 95.0%)
-  Neutral     :  100 sentences  ( 85.0%)
-  Negative    :  200 sentences  ( 97.5%)
-
-  Total: 500 sentences
-=================================================================
 ```
 
 ---
@@ -162,4 +166,4 @@ This is exactly how any **Classification model** works in Machine Learning:
 
 ## 👤 Author
 
-Made with Hager Gamal❤️ using Python & TextBlob
+Made with ❤️ using Python & TextBlob
